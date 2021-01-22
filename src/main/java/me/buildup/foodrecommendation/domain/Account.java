@@ -2,9 +2,8 @@ package me.buildup.foodrecommendation.domain;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.Email;
 
 @Entity
 @Getter @Setter
@@ -15,9 +14,13 @@ public class Account {
     @Id @GeneratedValue
     private Long id;
 
+    @Email
     private String email;
 
     private String password;
 
     private String userName;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
 }

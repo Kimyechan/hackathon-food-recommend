@@ -11,9 +11,11 @@ spring:
           lob:
             non_contextual_creation: true
         hbm2ddl:
-          auto: create
+          auto: update
         format_sql: true
     show-sql: true
+  jwt:
+    secret: buil@dup!@#
 
 logging:
   level:
@@ -24,3 +26,4 @@ logging:
           descripter:
             sql:
               BasicBinder: TRACE
+
