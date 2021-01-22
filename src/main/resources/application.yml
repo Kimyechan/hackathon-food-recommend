@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    username: yechan
+    password: pass
+    url: jdbc:postgresql://localhost:5432/foodrecommendation
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        hbm2ddl:
+          auto: create
+        format_sql: true
+    show-sql: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: INFO
+        type:
+          descripter:
+            sql:
+              BasicBinder: TRACE
