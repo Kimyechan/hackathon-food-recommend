@@ -13,8 +13,8 @@ import javax.validation.constraints.Min;
 @AllArgsConstructor
 @Builder
 @EqualsAndHashCode @ToString
-public class Comment {
-    @Id @GeneratedValue
+public class Comment extends BaseTimeEntity{
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String userName;
@@ -22,8 +22,25 @@ public class Comment {
     @Min(1) @Max(5)
     private Integer grade;
 
-    private String review;
+    private String content;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Restaurant restaurant;
+
+    @Builder
+    public Comment(String userName, Integer grade, String content) {
+        this.userName = userName;
+        this.grade = grade;
+        this.content = content;
+    }
+
+    public void update(String content) {
+        this.content = content;
+    }
+
+
+
 }
+
+
+
