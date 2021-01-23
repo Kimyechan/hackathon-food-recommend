@@ -1,7 +1,12 @@
 package me.buildup.foodrecommendation.domain;
 
+import lombok.*;
+
 import javax.persistence.Embeddable;
 
+@Data
+@NoArgsConstructor @AllArgsConstructor
+@Builder
 @Embeddable
 public class Location {
     private String location1;

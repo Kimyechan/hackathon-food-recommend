@@ -23,9 +23,9 @@ public class ExceptionAdvice {
         return new ExceptionResponse(false, -1002, e.getMessage());
     }
 
-    @ExceptionHandler(RuntimeException.class)
+    @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     protected ExceptionResponse global(Exception e) {
-        return new ExceptionResponse(false, -1002, e.getMessage());
+        return new ExceptionResponse(false, -1000, e.getMessage());
     }
 }
